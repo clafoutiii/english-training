@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="English Training">
+  <rect width="512" height="512" rx="112" fill="#0f7779"/>
+  <path d="M104 132c68-22 124-8 152 24 28-32 84-46 152-24v239c-64-21-119-9-152 22-33-31-88-43-152-22V132Z" fill="#fffdf9"/>
+  <path d="M256 156v210M139 183c42-11 76-4 98 14M139 233c42-11 76-4 98 14M139 283c42-11 76-4 98 14M373 183c-42-11-76-4-98 14M373 233c-42-11-76-4-98 14M373 283c-42-11-76-4-98 14" fill="none" stroke="#0f7779" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="393" cy="118" r="45" fill="#e1a734"/>
+  <path d="M374 103h38M393 84v38" stroke="#173b5a" stroke-width="14" stroke-linecap="round"/>
+</svg>

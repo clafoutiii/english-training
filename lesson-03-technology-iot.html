@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 03 — Technology & the Internet of Things</title>
+  <meta name="theme-color" content="#355c9a">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/app-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/app-icon-512.png">
+  <style>
+    :root{--ink:#172b42;--navy:#173b59;--blue:#355c9a;--cyan:#0d7780;--paper:#fff;--soft:#edf4fa;--mint:#eaf6f3;--warm:#fff6e5;--line:#bdd0df;--gold:#a36508;--good:#116842;--bad:#a1383e;--muted:#506475}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eef3f7;color:var(--ink);font:16px/1.58 system-ui,-apple-system,"Segoe UI",sans-serif}button,input,textarea{font:inherit}main{max-width:980px;margin:auto;padding:20px 18px 64px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:18px}.back{color:#154f79;text-decoration:none;font-weight:800}.saved{font-size:14px;color:var(--muted)}header{padding:32px;background:linear-gradient(135deg,#173b59,#35619f 62%,#08777b);color:#fff;border-radius:20px;box-shadow:0 12px 30px #123a4a2b}h1{margin:0 0 8px;font-size:clamp(29px,5vw,47px);line-height:1.08}h2{margin:0 0 13px;font-size:26px;line-height:1.2}h3{margin:18px 0 8px;font-size:19px}p{margin:0 0 12px}.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:17px}.badge{border:1px solid #ffffff88;border-radius:99px;padding:4px 10px;font-size:14px}section{margin-top:22px;padding:27px;background:var(--paper);border-radius:17px;box-shadow:0 4px 16px #172e4010}.goal{padding:15px 17px;border-left:5px solid var(--gold);background:var(--warm);border-radius:0 11px 11px 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{padding:16px;background:var(--mint);border-radius:12px}.blue-card{background:var(--soft)}.formula{display:inline-block;padding:3px 8px;margin:3px 0;background:#dcecf5;border-radius:7px;color:#174d78;font-weight:800}.term{border:0;border-bottom:2px dotted var(--cyan);padding:0;background:transparent;color:#075d65;font-weight:760;cursor:pointer}.term:hover,.term:focus{color:#9a5e07;border-color:#9a5e07}.term-note{margin:8px 0 10px;padding:10px 12px;background:#e5f3f2;border-left:3px solid var(--cyan);border-radius:0 8px 8px 0;font-size:14px;color:var(--ink)}.word-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.word{padding:13px;background:var(--soft);border-radius:10px}.word p{margin:5px 0 0;font-size:14px;color:#39536a}.exercise{margin-top:18px;padding:18px;background:#fffbf1;border:1px solid #ead69d;border-radius:13px;color:var(--ink)}.sentence{margin:13px 0}.sentence label{display:block;font-weight:680;margin-bottom:6px}.sentence input,.sentence textarea{width:100%;padding:10px;border:1px solid #a8c3d3;border-radius:8px;background:#fff;color:var(--ink)}textarea{min-height:210px;resize:vertical}#email{display:block;width:100%;min-height:240px;overflow:hidden;resize:none}.inline-input{display:inline-block;width:min(250px,100%);margin:0 5px;padding:7px 9px;border:1px solid #a8c3d3;border-radius:7px;background:#fff;color:var(--ink)}.word-bank{margin:12px 0;padding:11px 13px;border-radius:9px;background:#e2f1f0;color:#15444b;font-weight:750}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}button{border:0;border-radius:9px;padding:9px 14px;background:var(--blue);color:#fff;font-weight:800;cursor:pointer}button:hover,button:focus{background:var(--navy)}button.secondary{background:#dbe8ef;color:#174554}.result{min-height:25px;margin:11px 0 0;font-weight:750}.correct{color:var(--good)}.wrong{color:var(--bad)}.feedback{margin-top:9px;padding:10px 12px;background:#f3f0df;border-radius:8px;font-size:14px}.hidden{display:none!important}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}.flow-step{position:relative;padding:14px;background:#e6f2fa;border-radius:11px;text-align:center;font-weight:750;color:#15466e}.flow-step:not(:last-child)::after{content:'→';position:absolute;right:-10px;top:50%;transform:translateY(-50%);z-index:2;color:var(--blue);font-size:24px;font-weight:850}.reading{padding:18px;background:#f5f9fc;border-left:5px solid var(--blue);border-radius:0 11px 11px 0}.checkline{display:flex;gap:9px;align-items:flex-start;margin:8px 0;cursor:pointer}.checkline input{margin-top:5px;accent-color:var(--blue)}.count{font-size:14px;color:var(--muted)}.complete{margin-top:18px;padding:18px;background:#e8f6ed;border-left:5px solid var(--good);border-radius:0 12px 12px 0;color:var(--ink)}.report{white-space:pre-wrap;overflow-wrap:anywhere;padding:16px;background:#112f44;color:#edf9f8;border-radius:10px;font:14px/1.5 ui-monospace,Consolas,monospace}.structure{padding:15px;background:#eaf3f8;border-radius:11px}.structure ol{margin:8px 0 0;padding-left:22px}.source-note{font-size:14px;color:#526b7d}@media(max-width:650px){main{padding:14px 12px 46px}header,section{padding:20px}.grid,.word-grid,.flow{grid-template-columns:1fr}.flow-step:not(:last-child)::after{content:'↓';right:50%;top:auto;bottom:-22px;transform:translateX(50%)}.top{align-items:flex-start;flex-direction:column}.inline-input{display:block;width:100%;margin:6px 0}.sentence input{font-size:16px}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="top"><a class="back" href="/">← Lesson library</a><span id="saveStatus" class="saved">Progress is saved automatically</span></div>
+  <header>
+    <h1>Technology &amp; the Internet of Things</h1>
+    <p>Review the most useful language from Module 6, then learn how connected devices work and how to talk about technology clearly at B1 level.</p>
+    <div class="badges"><span class="badge">B1</span><span class="badge">75–90 minutes</span><span class="badge">Module 6 review + Unit 7a</span><span class="badge">Solo study</span></div>
+  </header>
+
+  <section>
+    <h2>Lesson map</h2>
+    <div class="goal"><b>By the end of this lesson, you can:</b> use key Module 6 grammar accurately, understand the Internet of Things (IoT), use technology collocations and prepositions, distinguish commonly confused words, and write a semi-formal email of congratulations.</div>
+    <div class="card" style="margin-top:14px"><b>Start with smart revision</b><p>Your automatic Lesson 02 work was excellent. The new review is harder: it targets precision with <span class="formula">a / an</span>, <span class="formula">semi-formal</span>, <span class="formula">may not have</span>, modal deductions and phrasal verbs.</p></div>
+  </section>
+
+  <section>
+    <h2>1. Module 6 precision review</h2>
+    <div class="grid"><div class="card"><h3>Useful corrections from your email response</h3><p><span class="formula">It is written in a semi-formal style.</span></p><p><span class="formula">It is an email to a former colleague.</span></p><p><span class="formula">They may not have a close relationship.</span></p></div><div class="card"><h3>Why these forms matter</h3><p>Use <b>an</b> before a vowel sound: <i>an email</i>. Use <span class="formula">may not + verb</span>, not <i>may haven't</i>. <i>Formal</i> and <i>semi-formal</i> describe a style better than <i>official</i> here.</p></div></div>
+    <div class="exercise">
+      <h3>Review A — choose the work value from the bank</h3><p>Use each word once. Type one word in each gap.</p>
+      <div class="word-bank">autonomous · punctual · respectful · creative · cooperative · responsible</div>
+      <div class="sentence"><label for="r1">1. Inez makes sensible decisions without constant instructions, so she is <input id="r1" class="inline-input" data-answers="autonomous" data-note="autonomous" placeholder="one word">.</label></div>
+      <div class="sentence"><label for="r2">2. The designer found an original solution to a difficult problem: he was <input id="r2" class="inline-input" data-answers="creative" data-note="creative" placeholder="one word">.</label></div>
+      <div class="sentence"><label for="r3">3. Please be <input id="r3" class="inline-input" data-answers="respectful" data-note="respectful" placeholder="one word"> when you disagree with a customer.</label></div>
+      <div class="sentence"><label for="r4">4. A <input id="r4" class="inline-input" data-answers="punctual" data-note="punctual" placeholder="one word"> colleague is ready before the shift begins.</label></div>
+      <div class="sentence"><label for="r5">5. A <input id="r5" class="inline-input" data-answers="cooperative" data-note="cooperative" placeholder="one word"> employee shares information with the team.</label></div>
+      <div class="sentence"><label for="r6">6. You are <input id="r6" class="inline-input" data-answers="responsible" data-note="responsible" placeholder="one word"> for checking the safety rules.</label></div>
+      <button type="button" onclick="scoreExact('reviewValues',['r1','r2','r3','r4','r5','r6'],'reviewValuesResult')">Check review A</button><p id="reviewValuesResult" class="result"></p><div id="reviewValuesFeedback" class="feedback hidden"></div>
+    </div>
+    <div class="exercise">
+      <h3>Review B — deductions about the past</h3><p>Choose from the modal bank and use the verb in brackets in the correct form. Write the complete modal phrase.</p>
+      <div class="word-bank">must have · might have · can't have</div>
+      <div class="sentence"><label for="r7">1. Maksim was with me all afternoon, so he <input id="r7" class="inline-input" data-answers="cant have arrived|can't have arrived" data-note="can't have arrived" placeholder="complete phrase"> <b>(arrive)</b> at the office at 3 p.m.</label></div>
+      <div class="sentence"><label for="r8">2. I am not certain why Emil is wet. He <input id="r8" class="inline-input" data-answers="might have walked" data-note="might have walked" placeholder="complete phrase"> <b>(walk)</b> home in the rain.</label></div>
+      <div class="sentence"><label for="r9">3. Neil got the job after one interview. He <input id="r9" class="inline-input" data-answers="must have impressed" data-note="must have impressed" placeholder="complete phrase"> <b>(impress)</b> the employer.</label></div>
+      <div class="sentence"><label for="r10">4. Ana is abroad this week, so it <input id="r10" class="inline-input" data-answers="cant have been|can't have been" data-note="can't have been" placeholder="complete phrase"> <b>(be)</b> her who uploaded the file today.</label></div>
+      <button type="button" onclick="scoreExact('reviewDeductions',['r7','r8','r9','r10'],'reviewDeductionsResult')">Check review B</button><p id="reviewDeductionsResult" class="result"></p><div id="reviewDeductionsFeedback" class="feedback hidden"></div>
+    </div>
+    <div class="exercise">
+      <h3>Review C — build the <i>fill</i> phrasal verb</h3><p>Use the complete phrasal verb from the bank. The situation tells you which meaning is needed.</p>
+      <div class="word-bank">fill in · fill in for · fill up · fill out</div>
+      <div class="sentence"><label for="r11">1. Please <input id="r11" class="inline-input" data-answers="fill in" data-note="fill in" placeholder="phrasal verb"> this short online form.</label></div>
+      <div class="sentence"><label for="r12">2. Sasha will <input id="r12" class="inline-input" data-answers="fill in for" data-note="fill in for" placeholder="phrasal verb"> me while I am on holiday.</label></div>
+      <div class="sentence"><label for="r13">3. Could you <input id="r13" class="inline-input" data-answers="fill up" data-note="fill up" placeholder="phrasal verb"> the printer tray with paper?</label></div>
+      <div class="sentence"><label for="r14">4. He is still growing and may <input id="r14" class="inline-input" data-answers="fill out" data-note="fill out" placeholder="phrasal verb"> in the shoulders.</label></div>
+      <button type="button" onclick="scoreExact('reviewFill',['r11','r12','r13','r14'],'reviewFillResult')">Check review C</button><p id="reviewFillResult" class="result"></p><div id="reviewFillFeedback" class="feedback hidden"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Technology: build compound nouns</h2>
+    <p>Many technology terms have two words. Learn the complete term, rather than translating each word separately.</p>
+    <div class="word-grid">
+      <div class="word"><button class="term" type="button" data-trans="виртуальная реальность" data-pron="/ˈvɜːtʃuəl riˈæləti/" data-context="Virtual reality can make a game feel real and three-dimensional.">virtual reality</button><p>A computer-made immersive environment.</p></div>
+      <div class="word"><button class="term" type="button" data-trans="искусственный интеллект" data-pron="/ˌɑːtɪfɪʃəl ɪnˈtelɪdʒəns/" data-context="Artificial intelligence can recognise patterns in large amounts of data.">artificial intelligence (AI)</button><p>Software that learns or makes decisions.</p></div>
+      <div class="word"><button class="term" type="button" data-trans="умный помощник" data-pron="/smɑːt əˈsɪstənt/" data-context="A smart assistant can set a reminder after a voice command.">smart assistant</button><p>A voice-controlled digital helper.</p></div>
+      <div class="word"><button class="term" type="button" data-trans="Интернет вещей" data-pron="/ˈɪntənet əv θɪŋz/" data-context="The Internet of Things connects everyday electrical devices online.">the Internet of Things (IoT)</button><p>Connected objects exchanging information.</p></div>
+      <div class="word"><button class="term" type="button" data-trans="цифровые устройства" data-pron="/ˈdɪdʒɪtl dɪˈvaɪsɪz/" data-context="Phones, watches and tablets are digital devices.">digital devices</button><p>Electronic tools that process data.</p></div>
+      <div class="word"><button class="term" type="button" data-trans="высокоскоростной широкополосный интернет" data-pron="/ˌhaɪ spiːd ˈbrɔːdbænd/" data-context="High-speed broadband makes video calls smoother.">high-speed broadband</button><p>A fast internet connection.</p></div>
+    </div>
+    <div class="exercise">
+      <h3>Practice — complete the compound noun</h3><p>Use each first word from the bank once. The second part is shown in brackets.</p>
+      <div class="word-bank">virtual · artificial · smart · Internet of · digital · high-speed</div>
+      <div class="sentence"><label for="t1">1. The new game uses <input id="t1" class="inline-input" data-answers="virtual" data-note="virtual reality" placeholder="one word"> <b>(reality)</b>.</label></div>
+      <div class="sentence"><label for="t2">2. Machines with <input id="t2" class="inline-input" data-answers="artificial" data-note="artificial intelligence" placeholder="one word"> <b>(intelligence)</b> can identify patterns.</label></div>
+      <div class="sentence"><label for="t3">3. My <input id="t3" class="inline-input" data-answers="smart" data-note="smart assistant" placeholder="one word"> <b>(assistant)</b> can hear a quiet command.</label></div>
+      <div class="sentence"><label for="t4">4. The <input id="t4" class="inline-input" data-answers="internet of" data-note="the Internet of Things" placeholder="two words"> <b>(Things)</b> connects objects online.</label></div>
+      <div class="sentence"><label for="t5">5. Watches and tablets are <input id="t5" class="inline-input" data-answers="digital" data-note="digital devices" placeholder="one word"> <b>(devices)</b>.</label></div>
+      <div class="sentence"><label for="t6">6. The video conference needs <input id="t6" class="inline-input" data-answers="high speed|high-speed" data-note="high-speed broadband" placeholder="one word"> <b>(broadband)</b>.</label></div>
+      <button type="button" onclick="scoreExact('technologyTerms',['t1','t2','t3','t4','t5','t6'],'technologyTermsResult')">Check technology terms</button><p id="technologyTermsResult" class="result"></p><div id="technologyTermsFeedback" class="feedback hidden"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. How the Internet of Things works</h2>
+    <p>The IoT is not one object. It is a network of <b>connected devices</b> that collect information, communicate online and trigger an action.</p>
+    <div class="flow"><div class="flow-step">sensor<br><small>collects data</small></div><div class="flow-step">internet connection<br><small>shares data</small></div><div class="flow-step">smart device<br><small>decides or receives a command</small></div><div class="flow-step">action<br><small>switches on, reminds, orders</small></div></div>
+    <div class="grid"><div class="card"><h3>Useful patterns</h3><p><span class="formula">allow + object + to + verb</span><br>The system allows devices <b>to communicate</b>.</p><p><span class="formula">tell + object + to + verb</span><br>The sensor tells the device <b>to switch on</b>.</p></div><div class="card"><h3>Useful everyday vocabulary</h3><p><button class="term" type="button" data-trans="срабатывать" data-pron="/ɡəʊ ɒf/" data-context="My alarm goes off at 6:30 every weekday.">go off</button> = start making a sound</p><p><button class="term" type="button" data-trans="заканчиваться" data-pron="/rʌn aʊt əv/" data-context="We have run out of milk, so the fridge creates a shopping list.">run out of</button> = have none left</p></div></div>
+    <div class="exercise">
+      <h3>Read and complete the connected-home notes</h3>
+      <div class="reading"><p>At 6:30, Noor’s alarm goes off. Her home network receives the signal and opens the blinds. It also tells the coffee maker to start. Small <b>sensors</b> in the refrigerator check what is inside. If the family is <b>running out of</b> milk, the fridge sends a shopping reminder to a phone. In a factory, similar devices can <b>communicate</b> when a machine needs attention. Doctors can also receive information from <b>wearables</b>, such as smart watches, to monitor a patient.</p></div>
+      <p>Use the word bank. Type the exact word or phrase that completes each note.</p><div class="word-bank">communicate · sensors · coffee maker · running out of · wearables · reminder</div>
+      <div class="sentence"><label for="iot1">1. The alarm sends a signal to the <input id="iot1" class="inline-input" data-answers="coffee maker" data-note="coffee maker" placeholder="phrase">.</label></div>
+      <div class="sentence"><label for="iot2">2. The refrigerator uses <input id="iot2" class="inline-input" data-answers="sensors" data-note="sensors" placeholder="word"> to check its contents.</label></div>
+      <div class="sentence"><label for="iot3">3. The fridge acts when the family is <input id="iot3" class="inline-input" data-answers="running out of" data-note="running out of" placeholder="phrase"> milk.</label></div>
+      <div class="sentence"><label for="iot4">4. Factory devices can <input id="iot4" class="inline-input" data-answers="communicate" data-note="communicate" placeholder="word"> when a machine needs attention.</label></div>
+      <div class="sentence"><label for="iot5">5. Smart watches are examples of <input id="iot5" class="inline-input" data-answers="wearables" data-note="wearables" placeholder="word">.</label></div>
+      <button type="button" onclick="scoreExact('iotReading',['iot1','iot2','iot3','iot4','iot5'],'iotReadingResult')">Check reading notes</button><p id="iotReadingResult" class="result"></p><div id="iotReadingFeedback" class="feedback hidden"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Technology collocations, prepositions &amp; similar words</h2>
+    <div class="word-grid"><div class="word"><button class="term" type="button" data-trans="настольный компьютер" data-pron="/ˈdesktɒp kəmˈpjuːtə(r)/" data-context="The first desktop computer was much larger than a modern laptop.">desktop computer</button></div><div class="word"><button class="term" type="button" data-trans="будильник" data-pron="/əˈlɑːm klɒk/" data-context="My alarm clock goes off at seven.">alarm clock</button></div><div class="word"><button class="term" type="button" data-trans="кофеварка" data-pron="/ˈkɒfi ˌmeɪkə(r)/" data-context="The coffee maker starts after the alarm rings.">coffee maker</button></div><div class="word"><button class="term" type="button" data-trans="банковский счёт" data-pron="/bæŋk əˈkaʊnt/" data-context="The payment came directly from her bank account.">bank account</button></div><div class="word"><button class="term" type="button" data-trans="промышленное оборудование" data-pron="/ɪnˈdʌstriəl ɪˈkwɪpmənt/" data-context="Sensors can protect industrial equipment from damage.">industrial equipment</button></div><div class="word"><button class="term" type="button" data-trans="пульт дистанционного управления" data-pron="/rɪˈməʊt kənˈtrəʊl/" data-context="A remote control lets you change channels from the sofa.">remote control</button></div></div>
+    <div class="exercise">
+      <h3>Practice — use the correct preposition</h3><p>Use each item from the bank once. Do not change the words.</p><div class="word-bank">about · out of · to · on · with</div>
+      <div class="sentence"><label for="p1">1. Some people worry <input id="p1" class="inline-input" data-answers="about" data-note="worry about" placeholder="preposition"> the development of AI.</label></div>
+      <div class="sentence"><label for="p2">2. I took money <input id="p2" class="inline-input" data-answers="out of" data-note="out of" placeholder="preposition phrase"> my bank account.</label></div>
+      <div class="sentence"><label for="p3">3. Is your tablet connected <input id="p3" class="inline-input" data-answers="to" data-note="connected to" placeholder="preposition"> the Internet?</label></div>
+      <div class="sentence"><label for="p4">4. This device went <input id="p4" class="inline-input" data-answers="on" data-note="on sale" placeholder="preposition"> sale last month.</label></div>
+      <div class="sentence"><label for="p5">5. Can I have a word <input id="p5" class="inline-input" data-answers="with" data-note="have a word with" placeholder="preposition"> you about the new software?</label></div>
+      <button type="button" onclick="scoreExact('prepositions',['p1','p2','p3','p4','p5'],'prepositionsResult')">Check prepositions</button><p id="prepositionsResult" class="result"></p><div id="prepositionsFeedback" class="feedback hidden"></div>
+    </div>
+    <div class="grid" style="margin-top:16px"><div class="card"><h3>Do not mix these up</h3><p><button class="term" type="button" data-trans="память; данные" data-pron="/ˈmeməri/" data-context="My phone has enough memory for thousands of photos.">memory</button> = the ability or space to store information.</p><p><button class="term" type="button" data-trans="напоминание" data-pron="/rɪˈmaɪndə(r)/" data-context="Set a reminder for your online appointment.">reminder</button> = something that helps you remember.</p><p><button class="term" type="button" data-trans="неподвижный" data-pron="/ˈsteɪʃənəri/" data-context="All the cars were stationary in the traffic jam.">stationary</button> = not moving.</p></div><div class="card"><h3>More precise pairs</h3><p><button class="term" type="button" data-trans="канцелярские принадлежности" data-pron="/ˈsteɪʃənəri/" data-context="There is paper in the stationery cupboard.">stationery</button> = paper, pens and office supplies.</p><p><span class="formula">consist of</span> = be made of.</p><p><button class="term" type="button" data-trans="продаваться" data-pron="/fɔː seɪl/" data-context="The old tablet is for sale online.">for sale</button> = available to buy; <span class="formula">on sale</span> = available in shops or reduced in price, depending on context.</p></div></div>
+    <div class="exercise">
+      <h3>Practice — choose the precise word or phrase</h3><p>Use each item from the bank once. Type the full word or phrase.</p><div class="word-bank">memory · reminder · consists of · stationary · stationery · for sale</div>
+      <div class="sentence"><label for="c1">1. My phone has enough <input id="c1" class="inline-input" data-answers="memory" data-note="memory" placeholder="word"> for videos and photos.</label></div>
+      <div class="sentence"><label for="c2">2. Set a <input id="c2" class="inline-input" data-answers="reminder" data-note="reminder" placeholder="word"> so you do not miss the online meeting.</label></div>
+      <div class="sentence"><label for="c3">3. The IoT system <input id="c3" class="inline-input" data-answers="consists of" data-note="consists of" placeholder="phrase"> hundreds of connected devices.</label></div>
+      <div class="sentence"><label for="c4">4. The train was <input id="c4" class="inline-input" data-answers="stationary" data-note="stationary" placeholder="word"> for ten minutes.</label></div>
+      <div class="sentence"><label for="c5">5. The printer needs more <input id="c5" class="inline-input" data-answers="stationery" data-note="stationery" placeholder="word">, especially paper.</label></div>
+      <div class="sentence"><label for="c6">6. Her old smartphone is <input id="c6" class="inline-input" data-answers="for sale" data-note="for sale" placeholder="phrase"> online.</label></div>
+      <button type="button" onclick="scoreExact('confusedWords',['c1','c2','c3','c4','c5','c6'],'confusedWordsResult')">Check similar words</button><p id="confusedWordsResult" class="result"></p><div id="confusedWordsFeedback" class="feedback hidden"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>5. <i>Drop</i> phrasal verbs: one verb, three meanings</h2>
+    <div class="grid"><div class="card"><h3><button class="term" type="button" data-trans="зайти ненадолго" data-pron="/drɒp baɪ/" data-context="Marta dropped by after work to show me her new tablet.">drop by</button></h3><p>Visit someone informally and briefly.</p></div><div class="card"><h3><button class="term" type="button" data-trans="заснуть; снижаться" data-pron="/drɒp ɒf/" data-context="I dropped off during the film. Laptop sales have also dropped off this year.">drop off</button></h3><p>Fall asleep; also decrease.</p></div><div class="card"><h3><button class="term" type="button" data-trans="бросить учёбу" data-pron="/drɒp aʊt/" data-context="He dropped out of the course before the final exam.">drop out</button></h3><p>Leave a course before finishing it.</p></div></div>
+    <div class="exercise"><h3>Practice — add the correct particle</h3><p>Use <b>by</b>, <b>off</b> or <b>out</b>. The sentence gives the meaning.</p>
+      <div class="sentence"><label for="d1">1. Kim decided to drop <input id="d1" class="inline-input" data-answers="out" data-note="drop out of a course" placeholder="particle"> of her computer course.</label></div>
+      <div class="sentence"><label for="d2">2. I dropped <input id="d2" class="inline-input" data-answers="off" data-note="drop off = fall asleep" placeholder="particle"> on the sofa during the documentary.</label></div>
+      <div class="sentence"><label for="d3">3. Sam dropped <input id="d3" class="inline-input" data-answers="by" data-note="drop by = visit informally" placeholder="particle"> to show me his new smartwatch.</label></div>
+      <div class="sentence"><label for="d4">4. Sales of old desktop computers have dropped <input id="d4" class="inline-input" data-answers="off" data-note="drop off = decrease" placeholder="particle"> recently.</label></div>
+      <button type="button" onclick="scoreExact('dropPhrasals',['d1','d2','d3','d4'],'dropPhrasalsResult')">Check phrasal verbs</button><p id="dropPhrasalsResult" class="result"></p><div id="dropPhrasalsFeedback" class="feedback hidden"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>6. H/W — semi-formal email of congratulations</h2>
+    <p>Write your own email, modelled on the organisation of the email from Unit 6c, Exercise 7. This is the only extended writing task in the lesson and will be included in your final report for feedback.</p>
+    <div class="structure"><b>Situation:</b> A former colleague, Alex, has started a new job at a company that develops smart devices for homes. Write to congratulate Alex. Use a friendly, semi-formal tone.<ol><li><b>Opening:</b> greet Alex, say it has been a while, and congratulate them on the new job.</li><li><b>Strengths:</b> mention two work values or skills that make Alex suitable for the role.</li><li><b>Challenge:</b> say what may be demanding about the job and why Alex will manage well. Use one modal of possibility or advice.</li><li><b>Closing:</b> give a wish for the future and sign off naturally.</li></ol><p style="margin-top:10px"><b>Target:</b> 120–160 words. Try to use at least two technology terms from this lesson and two work-value words.</p></div>
+    <textarea id="email" placeholder="Hi Alex,&#10;&#10;It has been a while since we were last in touch, but I was delighted to hear about ..."></textarea><p id="wordCount" class="count">0 words — target: 120–160 words.</p>
+    <label class="checkline"><input type="checkbox" id="wc1"> I used four clear paragraphs and a suitable greeting and closing.</label>
+    <label class="checkline"><input type="checkbox" id="wc2"> I congratulated Alex and mentioned two strengths.</label>
+    <label class="checkline"><input type="checkbox" id="wc3"> I used two technology terms and one modal for a possible challenge or advice.</label>
+    <label class="checkline"><input type="checkbox" id="wc4"> I ended with a future wish, such as <i>Best of luck with everything</i>.</label>
+  </section>
+
+  <section>
+    <h2>Finish Lesson 03</h2><p>Generate the report after completing the self-checks. Your full email is included so you can send it to me for personal feedback and for a new review entry.</p>
+    <div class="actions"><button type="button" onclick="finishLesson()">Finish lesson and create report</button><button type="button" class="secondary" onclick="restartLesson()">Restart lesson</button></div>
+    <div id="completion" class="complete hidden"><h3>Lesson complete</h3><pre id="reportText" class="report"></pre><div class="actions"><button type="button" onclick="copyReport()">Copy report</button><button type="button" class="secondary" onclick="restartLesson()">Study this lesson again</button></div><p id="copyStatus" class="result"></p></div>
+  </section>
+</main>
+<script>
+const storageKey='englishTraining.lesson03.v1';
+function normal(value){return String(value||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim()}
+function state(){try{return JSON.parse(localStorage.getItem(storageKey)||'{}')}catch{return {}}}
+function fields(){const out={};document.querySelectorAll('input,textarea').forEach(e=>{const k=e.id||e.name;if(!k)return;if(e.type==='checkbox')out[k]=e.checked;else out[k]=e.value});return out}
+function saveState(){const old=state();localStorage.setItem(storageKey,JSON.stringify({fields:fields(),scores:old.scores||{},completed:old.completed||false,savedAt:old.savedAt||Date.now()}));const s=document.getElementById('saveStatus');s.textContent='Saved';clearTimeout(window.saveTimer);window.saveTimer=setTimeout(()=>s.textContent='Progress is saved automatically',900)}
+function resizeEmail(){const e=document.getElementById('email');e.style.height='auto';e.style.height=Math.max(e.scrollHeight,240)+'px'}
+function restore(){const d=state();Object.entries(d.fields||{}).forEach(([id,value])=>{const e=document.getElementById(id);if(!e)return;if(e.type==='checkbox')e.checked=!!value;else e.value=value});wordCount();resizeEmail();if(d.completed)renderReport()}
+function accepts(element){return (element.dataset.answers||'').split('|').map(normal).includes(normal(element.value))}
+function setScore(key,score,total,misses){const d=state();d.scores=d.scores||{};d.scores[key]={score,total,misses};d.fields=fields();d.completed=false;localStorage.setItem(storageKey,JSON.stringify(d));saveState()}
+function scoreExact(key,ids,resultId){let score=0;const misses=[];ids.forEach((id,index)=>{const e=document.getElementById(id);if(accepts(e))score++;else misses.push((index+1)+'. '+e.dataset.note)});setScore(key,score,ids.length,misses);const r=document.getElementById(resultId);r.className='result '+(score===ids.length?'correct':'wrong');r.textContent=score===ids.length?'Excellent — '+score+'/'+ids.length+'.':'Score: '+score+'/'+ids.length+'. Review the answer(s) below and try again.';const f=document.getElementById(key+'Feedback');if(f){f.classList.remove('hidden');f.innerHTML='<b>Answers</b><br>'+ids.map((id,i)=>{const e=document.getElementById(id);return '<span class="'+(accepts(e)?'correct':'wrong')+'">'+(i+1)+'. '+e.dataset.note+'</span>'}).join('<br>')}}
+function toggleTerm(button){const old=button.nextElementSibling;if(old&&old.classList.contains('term-note')){old.remove();return}document.querySelectorAll('.term-note').forEach(x=>x.remove());const note=document.createElement('div');note.className='term-note';note.innerHTML='<b>Russian:</b> '+button.dataset.trans+'<br><b>Pronunciation:</b> '+button.dataset.pron+'<br><b>Context:</b> '+button.dataset.context;button.insertAdjacentElement('afterend',note)}
+function wordCount(){const t=document.getElementById('email').value.trim(),n=t?t.split(/\s+/).length:0;document.getElementById('wordCount').textContent=n+' word'+(n===1?'':'s')+(n>=120&&n<=160?' — target reached.':' — target: 120–160 words.');return n}
+function scoreLine(d,key,label){const item=(d.scores||{})[key];return '- '+label+': '+(item?item.score+'/'+item.total:'not checked')}
+function weak(d){const labels={reviewValues:'Module 6 work values',reviewDeductions:'past deductions',reviewFill:'fill phrasal verbs',technologyTerms:'technology compounds',iotReading:'IoT reading',prepositions:'technology prepositions',confusedWords:'similar words',dropPhrasals:'drop phrasal verbs'};return Object.entries(d.scores||{}).filter(([,x])=>x.score<x.total).map(([key,x])=>'- '+(labels[key]||key)+' ('+x.score+'/'+x.total+')')}
+function report(){const d=state(),list=[['reviewValues','Module 6 work values'],['reviewDeductions','Past deductions'],['reviewFill','Fill phrasal verbs'],['technologyTerms','Technology compounds'],['iotReading','IoT reading'],['prepositions','Technology prepositions'],['confusedWords','Similar words'],['dropPhrasals','Drop phrasal verbs']];const words=wordCount(),checks=['wc1','wc2','wc3','wc4'].filter(id=>document.getElementById(id).checked).length;let text='ENGLISH TRAINING — LESSON 03 REPORT\nTopic: Technology & the Internet of Things\n\nSCORES\n';list.forEach(([key,label])=>text+=scoreLine(d,key,label)+'\n');text+='\nH/W EMAIL — SEMI-FORMAL CONGRATULATIONS\n- Word count: '+words+'\n- Self-check: '+checks+'/4\n\n'+(document.getElementById('email').value.trim()||'[No email written yet.]')+'\n\nREVIEW PRIORITY\n'+(weak(d).length?weak(d).join('\n'):'- No checked weak areas. Check the email for language accuracy and create a more challenging review next time.')+'\n\nREQUEST FOR NEXT LESSON\nCheck the email above. Add feedback to Progress reviews. Start the next lesson with different revision tasks for the weaknesses, then continue with the next B1 topic.';return text}
+function renderReport(){document.getElementById('reportText').textContent=report();document.getElementById('completion').classList.remove('hidden')}
+function finishLesson(){const d=state();d.completed=true;d.fields=fields();d.savedAt=Date.now();localStorage.setItem(storageKey,JSON.stringify(d));saveState();renderReport();document.getElementById('completion').scrollIntoView({behavior:'smooth',block:'center'})}
+async function copyReport(){try{await navigator.clipboard.writeText(document.getElementById('reportText').textContent);document.getElementById('copyStatus').textContent='Report copied.'}catch{document.getElementById('copyStatus').textContent='Select and copy the report manually.'}}
+function restartLesson(){if(confirm('Restart Lesson 03? Saved answers, scores and writing will be removed.')){localStorage.setItem(storageKey,JSON.stringify({fields:{},scores:{},completed:false,savedAt:Date.now()}));location.reload()}}
+document.querySelectorAll('.term').forEach(x=>x.addEventListener('click',()=>toggleTerm(x)));document.querySelectorAll('input,textarea').forEach(x=>x.addEventListener('input',()=>{if(x.id==='email'){resizeEmail();wordCount()}saveState()}));document.querySelectorAll('input[type=checkbox]').forEach(x=>x.addEventListener('change',saveState));restore();
+</script>
+</body>
+</html>
